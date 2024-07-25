@@ -1,0 +1,10 @@
+parsed_html <- read_html(wiki_html)
+root_node <- xml2::xml_root(parsed_html)
+print(root_node)
+
+table_node <- html_nodes(root_node, "table")
+table_node
+
+table_df <- as.data.frame(html_table(table_node[2]))
+head(table_df)
+tail(table_df)
