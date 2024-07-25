@@ -1,0 +1,11 @@
+
+get_wiki_covid19_page <- function() {
+ wiki_base_url <- "https://en.wikipedia.org/w/index.php"
+ url_param <- "title=Template:COVID-19_testing_by_country"
+ full_url <- paste(wiki_base_url, "?", url_param, sep = "")
+ response <- GET(url = full_url)
+ return(response)
+}
+
+wiki_html <- get_wiki_covid19_page()
+print(wiki_html)
