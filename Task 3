@@ -4,3 +4,7 @@ new_df <- preprocess_covid_data_frame(table_df)
 new_df
 
 summary(new_df)
+
+wd <- getwd()
+filepath <- paste(wd, "/covid.csv", sep="", collapse=NULL)
+write.csv(new_df, filepath, row.names=FALSE)
